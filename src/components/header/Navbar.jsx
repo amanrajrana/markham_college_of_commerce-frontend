@@ -26,7 +26,7 @@ const Navbar = () => {
       <nav
         className={`${
           navbarVisible ? "top-0" : "top-[-100%]"
-        } duration-500 p-10 bg-blue-950 absolute right-0 min-h-screen w-full md:block md:min-h-fit md:h-auto md:static md:p-3 md:bg-primary `}
+        } duration-500 p-10 bg-blue-950 fixed right-0 min-h-screen w-full md:block md:min-h-fit md:h-auto md:static md:p-3 md:bg-primary `}
       >
         <ul className="flex flex-col md:flex-row md:justify-between  gap-3 max-w-screen-xl  mx-auto text-secondary">
           <li className="">
