@@ -1,5 +1,4 @@
 import Button from "../Button";
-import Carousel from "./Carousel";
 import styles from "./styles.module.css";
 
 const Hero = () => {
