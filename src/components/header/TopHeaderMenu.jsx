@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Button from "../Button";
-import SocialMediaLink from "../hero/SocialMediaLink";
+import SocialMediaLink from "../HomeComponents/hero/SocialMediaLink";
 
 const TopHeaderMenu = () => {
   return (

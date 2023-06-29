@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Button from "../Button";
-import SocialMediaLink from "../hero/SocialMediaLink";
+import SocialMediaLink from "../HomeComponents/hero/SocialMediaLink";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -20,15 +20,18 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="top-2 fixed text-secondary text-3xl right-3 md:hidden z-10">
-        <FontAwesomeIcon onClick={navbarVisibility} icon={navbarVisible ? faXmark : faBars} />
+      <div className="top-2 fixed text-white text-3xl right-3 md:hidden z-10">
+        <FontAwesomeIcon
+          onClick={navbarVisibility}
+          icon={navbarVisible ? faXmark : faBars}
+        />
       </div>
       <nav
-        className={`${
-          navbarVisible ? "top-0" : "top-[-100%]"
-        } duration-500 p-10 bg-blue-950 fixed right-0 min-h-screen w-full md:block md:min-h-fit md:h-auto md:static md:p-3 md:bg-primary `}
+        className={`
+        ${navbarVisible ? "top-0 visible" : "top-[-120%] invisible"} 
+          duration-500 p-10 bg-blue-950 fixed right-0 min-h-screen w-full md:visible md:block md:min-h-fit md:h-auto md:static md:p-3 md:bg-primary overflow-y-auto`}
       >
-        <ul className="flex flex-col md:flex-row md:justify-between  gap-3 max-w-screen-xl  mx-auto text-secondary">
+        <ul className="flex flex-col md:flex-row md:justify-between  gap-3 max-w-screen-xl  mx-auto text-white">
           <li className="">
             <Link className="flex items-center gap-1" href={"#"}>
               Home
@@ -81,7 +84,8 @@ const Navbar = () => {
         </ul>
         <div className="md:hidden mt-7 flex justify-center w-full flex-col items-center gap-5">
           <Button text={"Log In"} href={"#"} />
-          <div className="text-secondary">
+          <div className="text-white
+          ">
             <SocialMediaLink />
           </div>
         </div>
