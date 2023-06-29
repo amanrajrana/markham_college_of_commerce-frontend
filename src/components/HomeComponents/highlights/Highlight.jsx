@@ -7,6 +7,8 @@ import {
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./styles.module.css";
+
 
 const Highlight = ({ iconName, heading, text }) => {
   let icon = null;
@@ -41,9 +43,9 @@ const Highlight = ({ iconName, heading, text }) => {
   }
 
   return (
-    <div className="flex gap-4">
+    <div className={`${styles.flipContainer} cursor-context-menu flex gap-4`}>
       <FontAwesomeIcon
-        className="text-4xl text-blue-900 p-4 rounded-full h-12 w-12 bg-secondary"
+        className={`${styles.flipIcon} text-4xl text-blue-900 p-4 rounded-full h-12 w-12 bg-secondary`}
         icon={icon}
       />
       <div>

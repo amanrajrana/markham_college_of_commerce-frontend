@@ -1,0 +1,7 @@
+.flipContainer:hover .flipIcon{
+    transform: rotateY(180deg);
+}
+
+.flipIcon {
+    transition: transform 0.5s ease;
+}
