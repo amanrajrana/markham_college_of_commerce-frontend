@@ -25,6 +25,11 @@ module.exports = {
         secondary: "#F9F9FB",
         tertiary: "#0A0708",
       },
+      borderColor: {
+        primary: "#FF4C15",
+        secondary: "#F9F9FB",
+        tertiary: "#0A0708",
+      }
     },
   },
   plugins: [],
