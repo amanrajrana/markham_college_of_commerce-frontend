@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Button from "../Button";
-import SocialMediaLink from "../HomeComponents/hero/SocialMediaLink";
+import SocialMediaLink from "../SocialMediaLink";
 import { useState } from "react";
 
 const Navbar = () => {

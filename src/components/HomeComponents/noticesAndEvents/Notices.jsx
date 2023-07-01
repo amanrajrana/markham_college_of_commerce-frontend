@@ -1,8 +1,8 @@
+import Button from "@/components/Button";
 import Notice from "./NoticeItem";
 import styles from "./styles.module.css";
 
 const Notices = () => {
-
   //TODO: fetch notices form database
   const notices = [
     {
@@ -110,6 +110,9 @@ const Notices = () => {
           detailsLink={notice.detailsLink}
         />
       ))}
+      <div className="mx-auto w-fit">
+        <Button text={"More &rarr;"} href={""} />
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const LogoAndInfo = () => {
       <div className="flex justify-between max-w-screen-xl items-center mx-auto w-full">
         <div>
           <Image
-            src={"/image/logo.webp"}
+            src={"/logo.webp"}
             alt="Markham college of commerce"
             width={400}
             height={90}

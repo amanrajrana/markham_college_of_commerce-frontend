@@ -11,7 +11,7 @@ const Notice = ({
   detailsLink,
 }) => {
   return (
-    <div className="hover:scale-[1.01] duration-300">
+    <div>
       {/* category */}
       <p className="text-primary rounded-full text-xs">{category}</p>
       <h4 className="font-medium">{title}</h4>

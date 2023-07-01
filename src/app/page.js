@@ -1,11 +1,13 @@
-import EnrollmentStatistics from "@/components/HomeComponents/EnrollmentStatistics";
+import EnrollmentStatistics from "@/components/HomeComponents/EnrollmentStatistics/Index";
 import Header from "@/components/header/Index";
 import Hero from "@/components/HomeComponents/hero/Index";
 import Features from "@/components/HomeComponents/Features/Index";
 import Highlights from "@/components/HomeComponents/highlights/Index";
 import NoticesAndEvents from "@/components/HomeComponents/noticesAndEvents/Index";
 import Footer from "@/components/footer";
-import CopyrightSection from "@/components/CopyrightSection";
+import Gallery from "@/components/HomeComponents/Gallery/Index";
+import PrincipleMsg from "@/components/HomeComponents/PrincipleMsg";
+import SupportLink from "@/components/HomeComponents/SupportLink";
 
 export default function Home() {
   return (
@@ -16,8 +18,10 @@ export default function Home() {
       <Features />
       <Highlights />
       <NoticesAndEvents />
-      {/* <Footer /> */}
-      <CopyrightSection />
+      <Gallery />
+      <PrincipleMsg />
+      <SupportLink />
+      <Footer />
     </>
   );
 }

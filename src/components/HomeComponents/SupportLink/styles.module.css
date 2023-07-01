@@ -1,0 +1,21 @@
+.linkImage {
+  animation: scroll-anim 60s infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+
+.linkImage:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-anim {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
