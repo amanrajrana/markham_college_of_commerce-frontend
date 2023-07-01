@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <footer className={`${styles.footer} mt-4 px-3`}>
-      <div className="py-8 max-w-screen-xl mx-auto grid md:grid-cols-11 gap-8">
+      <div className="py-8 max-w-screen-xl mx-auto grid md:grid-cols-11 gap-16">
         <div className="col-span-3">
           <Image
             className="max-w-full invert self-center mx-auto"
@@ -27,9 +27,9 @@ const Footer = () => {
             width="400"
             height="300"
             className="border-0 w-full"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
 
@@ -98,9 +98,9 @@ const Footer = () => {
       {/* ======= Copyright section ======= */}
       <div className="border-t border-gray-500">
         <div className="text-gray-300 flex flex-wrap max-w-screen-xl mx-auto justify-between items-center p-3 opacity-70 text-sm">
-          <div>&copy; 2023 Markham college of commerce</div>
+          <p>&copy; 2023 Markham college of commerce</p>
 
-          <div>
+          <p>
             Developed by&nbsp;
             <a
               href="https://github.com/amanrajrana"
@@ -108,7 +108,7 @@ const Footer = () => {
             >
               Aman Raj Rana
             </a>
-          </div>
+          </p>
         </div>
       </div>
     </footer>
