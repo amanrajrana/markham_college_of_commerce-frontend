@@ -9,10 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Button from "../Button";
 import SocialMediaLink from "../SocialMediaLink";
-import { useState } from "react";
 import styles from "./styles.module.css";
 import DropDownItem from "./DropDownItem";
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(false);
@@ -23,13 +22,13 @@ const Navbar = () => {
       id: 0,
       isDropDown: false,
       name: "Home",
-      path: "#",
+      path: "/",
     },
     {
       id: 1,
       isDropDown: false,
       name: "About Us",
-      path: "#",
+      path: "/about-us",
     },
     {
       id: 2,
@@ -108,14 +107,17 @@ const Navbar = () => {
         ${navbarVisible ? "top-0 visible" : "top-[-120%] invisible"} 
           duration-500 p-10 bg-blue-950 fixed right-0 min-h-screen z-[5] w-full md:visible md:block md:min-h-fit md:h-auto md:static md:p-3 md:bg-primary overflow-y-auto`}
       >
-        <ul className="flex flex-col md:flex-row md:justify-between  gap-3 max-w-screen-xl  mx-auto text-white">
+        <ul className="flex flex-col md:flex-row md:justify-between  gap-4 max-w-screen-xl  mx-auto text-white">
           {/* ==== Map on NAV__ITEMS ====  */}
           {NAV__ITEMS.map((ITEM) => {
             return (
               <li key={ITEM.id} className={`${styles.dropdown} duration-500`}>
                 <Link
-                  className="flex items-center gap-1 hover:underline"
-                  href={"#"}
+                  className="flex items-center gap-1 md:hover:underline"
+                  href={ITEM?.path || "#"}
+                  onClick={() => {
+                    ITEM.isDropDown ? "" : setNavbarVisible(!navbarVisible);
+                  }}
                 >
                   {ITEM.name}
 
@@ -125,7 +127,10 @@ const Navbar = () => {
 
                 {/* {If ITEM.isDropDown is true then display <DropDownItem /> components} */}
                 {ITEM.isDropDown && (
-                  <DropDownItem dropDownItemsList={ITEM.dropDownItems} />
+                  <DropDownItem
+                    dropDownItemsList={ITEM.dropDownItems}
+                    setNavbarVisible={setNavbarVisible}
+                  />
                 )}
               </li>
             );
