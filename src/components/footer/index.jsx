@@ -6,7 +6,7 @@ import CopyWriteSection from "./CopyWriteSection";
 
 const Footer = () => {
   return (
-    <footer className={`${styles.footer} mt-4 px-3`}>
+    <footer className={`${styles.footer} mt-4 px-3 overflow-hidden`}>
       <div className="py-8 max-w-screen-xl mx-auto grid md:grid-cols-11 gap-16">
         {/* ====== Logo ======== */}
         <div className="col-span-3">

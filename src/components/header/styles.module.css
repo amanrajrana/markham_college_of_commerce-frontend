@@ -1,0 +1,19 @@
+.dropdown ul {
+  display: none;
+}
+
+.dropdown:hover ul {
+  display: block;
+  animation: myAnimation 0.1s ease-out;
+}
+
+@keyframes myAnimation {
+  0% {
+    margin-top: 2rem;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}

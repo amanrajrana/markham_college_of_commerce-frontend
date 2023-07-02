@@ -5,7 +5,7 @@ import Features from "@/components/HomeComponents/Features/Index";
 import Highlights from "@/components/HomeComponents/highlights/Index";
 import NoticesAndEvents from "@/components/HomeComponents/noticesAndEvents/Index";
 import Footer from "@/components/footer";
-import Gallery from "@/components/HomeComponents/Gallery/Index";
+import Gallery from "@/components/HomeComponents/Gallery";
 import PrincipleMsg from "@/components/HomeComponents/PrincipleMsg";
 import SupportLink from "@/components/HomeComponents/SupportLink";
 
