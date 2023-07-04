@@ -49,7 +49,7 @@ const Highlight = ({ iconName, heading, text }) => {
         icon={icon}
       />
       <div>
-        <h3 className="font-semibold text-sm">{heading}</h3>
+        <h3 className="font-semibold text-sm tracking-widest">{heading}</h3>
         <p className="text-slate-300">{text}</p>
       </div>
     </div>
