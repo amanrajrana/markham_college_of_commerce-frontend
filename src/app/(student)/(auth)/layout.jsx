@@ -1,6 +1,6 @@
 import "@/app/globals.css";
-import Footer from "@/components/auth/Footer";
-import Header from "@/components/auth/Header";
+import Footer from "@/components/student/Footer";
+import Header from "@/components/student/Header";
 
 export default function RootLayout({ children }) {
   return (
