@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const ResetPasswordForm = () => {
   return (
     <>
-    <h1 className="text-2xl font-bold text-center">Student Login Portal</h1>
+    <h1 className="text-2xl font-bold text-center">Password Reset</h1>
       <form className="flex flex-col w-full gap-4 my-4">
       <div className="border rounded-sm   flex">
           <FontAwesomeIcon className="self-center p-3" icon={faUser} />

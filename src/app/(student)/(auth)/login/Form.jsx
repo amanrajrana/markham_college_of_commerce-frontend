@@ -12,7 +12,7 @@ const Form = () => {
       {visibleForm === "loginForm" && <LoginForm />}
       {visibleForm === "resetPasswordForm" && <ResetPasswordForm />}
       <p>
-        Forgot password?{" "}
+        {visibleForm === "loginForm" ? "Forgot Password? " : "Login With Password? "}
         <span
           onClick={() =>
             setVisibleForm(
@@ -21,7 +21,7 @@ const Form = () => {
           }
           className="duration-500 text-primary hover:underline font-medium cursor-pointer"
         >
-          {visibleForm === "loginForm" ? "Reset Password" : "Login"}
+          {visibleForm === "loginForm" ? "Reset Password" : "Click here"}
         </span>
       </p>
     </>
