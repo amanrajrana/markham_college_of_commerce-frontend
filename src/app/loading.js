@@ -1,4 +1,14 @@
+import styles from "./style.module.css";
+
 export default function Loading() {
-  // Or a custom loading skeleton component
-  return <p>Loading...</p>;
+  return (
+    <section className={styles.preLoading}>
+      <div className={styles.ldsEllipsis}>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+  );
 }
