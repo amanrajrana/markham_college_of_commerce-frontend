@@ -7,12 +7,11 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import { useState } from "react";
 
 const LoginForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  
+
   return (
     <>
       {" "}
@@ -21,7 +20,7 @@ const LoginForm = () => {
         <div className="border rounded-sm overflow-hidden flex">
           <FontAwesomeIcon className="self-center p-3" icon={faUser} />
           <input
-            className="py-2 px-3 bg-gray-100 grow"
+            className="py-2 px-3 bg-gray-100 flex-1 w-10/12"
             type="email"
             name="email"
             placeholder="Enter your email"
@@ -31,7 +30,7 @@ const LoginForm = () => {
         <div className="border rounded-sm flex overflow-hidden">
           <FontAwesomeIcon className="self-center p-3" icon={faKey} />
           <input
-            className="py-2 px-3 bg-gray-100 grow"
+            className="py-2 px-3 bg-gray-100 flex-1 w-10/12"
             type={isPasswordVisible ? "text" : "password"}
             name="password"
             placeholder="Enter your password"
@@ -44,18 +43,12 @@ const LoginForm = () => {
         </div>
 
         <button
-          className="bg-primary rounded-sm px-4 py-2 uppercase text-white"
+          className="bg-blue-900 duration-500 rounded-sm px-4 py-2 uppercase text-white"
           type="submit"
         >
           Login
         </button>
       </form>
-      <Link
-        className="duration-500 text-primary hover:underline font-medium"
-        href="/signup"
-      >
-        New Student?
-      </Link>
     </>
   );
 };

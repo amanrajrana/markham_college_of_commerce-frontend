@@ -21,7 +21,7 @@ const Form = () => {
           }
           className="duration-500 text-primary hover:underline font-medium cursor-pointer"
         >
-          {visibleForm === "loginForm" ? "Reset Password" : "Click here"}
+          {visibleForm === "loginForm" ? "Reset" : "Click here"}
         </span>
       </p>
     </>

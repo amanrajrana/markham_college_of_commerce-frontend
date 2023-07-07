@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Form from "./Form";
+import Link from "next/link";
 
 export const metadata = {
   title: "Student Login Portal - Markham College of Commerce, Hazaribagh",
@@ -19,6 +20,16 @@ const Login = () => {
           height={100}
         />
         <Form />
+        <div className="my-3 text-gray-500 w-full flex justify-center flex-col text-center items-center">
+          <span className="block border-b w-full relative -bottom-4  "></span>
+          <span className="bg-white w-fit p-1 relative z-10">or</span>
+        </div>
+        <Link
+          className="duration-500 bg-primary py-2 px-4 w-full text-center text-white hover:underline font-medium"
+          href="/signup"
+        >
+          Register
+        </Link>
       </div>
     </div>
   );

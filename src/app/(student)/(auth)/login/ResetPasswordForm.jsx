@@ -1,5 +1,3 @@
-"use client"
-
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -11,14 +9,14 @@ const ResetPasswordForm = () => {
       <div className="border rounded-sm   flex">
           <FontAwesomeIcon className="self-center p-3" icon={faUser} />
           <input
-            className="py-2 px-3 bg-gray-100 flex-1 focus:outline"
+            className="py-2 px-3 bg-gray-100 flex-1 w-10/12"
             type="email"
             name="email"
             placeholder="Enter your email or Phone Number"
           />
         </div>
         <button
-          className="bg-primary rounded-sm px-4 py-2 uppercase text-white"
+          className="bg-blue-900 rounded-sm px-4 py-2 uppercase text-white"
           type="submit"
         >
           Get OTP
