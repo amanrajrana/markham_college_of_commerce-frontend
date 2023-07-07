@@ -7,8 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import Button from "../Button";
-import SocialMediaLink from "../SocialMediaLink";
+import Button from "@components/Button";
+import SocialMediaLink from "@components/SocialMediaLink";
 import styles from "./styles.module.css";
 import DropDownItem from "./DropDownItem";
 import React, { useState } from "react";
@@ -139,7 +139,7 @@ const Navbar = () => {
 
         {/* ==== This div display only in small screen ===== */}
         <div className="md:hidden mt-7 flex justify-center w-full flex-col items-center gap-5">
-          <Button text={"Log In"} href={"#"} />
+          <Button text={"Log In"} href={"/login"} />
           <div className="text-white">
             <SocialMediaLink />
           </div>

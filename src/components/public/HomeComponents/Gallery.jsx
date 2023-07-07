@@ -1,4 +1,4 @@
-import Heading2 from "@/components/Heading2";
+import Heading2 from "@components/Heading2";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";

@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import Button from "@components/Button";
 import Notice from "./NoticeItem";
 import styles from "./styles.module.css";
 

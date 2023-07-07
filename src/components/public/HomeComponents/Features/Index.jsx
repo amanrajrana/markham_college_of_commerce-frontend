@@ -1,4 +1,4 @@
-import Heading2 from "@/components/Heading2";
+import Heading2 from "@components/Heading2";
 import Feature from "./Feature";
 
 const Features = () => {

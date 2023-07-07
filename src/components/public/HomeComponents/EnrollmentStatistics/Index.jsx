@@ -1,4 +1,6 @@
-import Heading2 from "../../Heading2";
+
+// import Heading2 from "../../Heading2";
+import Heading2 from "@components/Heading2";
 import Statistics from "./Statistics";
 
 const EnrollmentStatistics = () => {

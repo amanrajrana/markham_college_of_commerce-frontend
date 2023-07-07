@@ -1,4 +1,4 @@
-import Heading2 from "@/components/Heading2";
+import Heading2 from "@components/Heading2";
 import ImportantLink from "./ImportantLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faLink } from "@fortawesome/free-solid-svg-icons";

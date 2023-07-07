@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
-import Heading2 from "@/components/Heading2";
+import Heading2 from "@components/Heading2";
 
 const SupportLink = () => {
   const links = [

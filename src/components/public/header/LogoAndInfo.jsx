@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../Button";
+import Button from "@components/Button";
 import Link from "next/link";
 
 const LogoAndInfo = () => {
@@ -15,7 +15,7 @@ const LogoAndInfo = () => {
           />
         </Link>
         <div className="hidden md:block">
-          <Button href={'#'} text={'Log In'}/>
+          <Button href={'/login'} text={'Log In'}/>
         </div>
       </div>
     </div>

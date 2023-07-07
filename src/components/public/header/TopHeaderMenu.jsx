@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Button from "../Button";
-import SocialMediaLink from "../SocialMediaLink";
+import Button from "../../Button";
+import SocialMediaLink from "../../SocialMediaLink";
 import Image from "next/image";
 
 const TopHeaderMenu = () => {

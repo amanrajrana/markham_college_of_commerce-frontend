@@ -1,7 +1,7 @@
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import Heading2 from "../Heading2";
+import Heading2 from "@components/Heading2";
 
 const PrincipleMsg = () => {
   return (

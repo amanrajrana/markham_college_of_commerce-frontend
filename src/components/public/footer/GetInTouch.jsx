@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Heading3 from "../Heading3";
+import Heading3 from "@components/Heading3";
 import {
   faEnvelope,
   faLocationDot,
