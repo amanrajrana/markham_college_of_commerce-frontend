@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Form from "./Form";
+import Form from "./components/Form";
 import Link from "next/link";
 
 export const metadata = {
