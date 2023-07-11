@@ -1,6 +1,5 @@
 import Heading2 from "@/components/Heading2";
 import Image from "next/image";
-import StepBar from "./components/stepBar";
 import SignUpForm from "./components/Form";
 import styles from "../login/styles.module.css";
 

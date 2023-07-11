@@ -11,27 +11,31 @@ import Button from "@components/Button";
 import SocialMediaLink from "@components/SocialMediaLink";
 import styles from "./styles.module.css";
 import DropDownItem from "./DropDownItem";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(false);
 
+  const pathName = usePathname();
+
+  useEffect(() => {
+    setNavbarVisible(false);
+  }, [pathName]);
+
   //TODO: Add path
   const NAV__ITEMS = [
     {
-      id: 0,
       isDropDown: false,
       name: "Home",
       path: "/",
     },
     {
-      id: 1,
       isDropDown: false,
       name: "About Us",
       path: "/about-us",
     },
     {
-      id: 2,
       isDropDown: true,
       name: "Programs",
       dropDownItems: [
@@ -41,27 +45,24 @@ const Navbar = () => {
       ],
     },
     {
-      id: 3,
       isDropDown: false,
       name: "Facilities",
       path: "#",
     },
     {
-      id: 4,
       isDropDown: false,
       name: "Admission",
       path: "#",
     },
     {
-      id: 5,
       isDropDown: true,
       name: "Notice",
       dropDownItems: [
-        { id: 5.1, name: "Admission", path: "#" },
-        { id: 5.2, name: "Exam", path: "#" },
-        { id: 5.3, name: "Class", path: "#" },
-        { id: 5.4, name: "Event", path: "#" },
-        { id: 5.5, name: "Programs", path: "#" },
+        { name: "Admission", path: "#" },
+        { name: "Exam", path: "#" },
+        { name: "Class", path: "#" },
+        { name: "Event", path: "#" },
+        { name: "Programs", path: "#" },
       ],
     },
     {
@@ -69,10 +70,10 @@ const Navbar = () => {
       isDropDown: true,
       name: "Campus",
       dropDownItems: [
-        { id: 6.1, name: "NCC", path: "#" },
-        { id: 6.2, name: "Exam", path: "#" },
-        { id: 6.3, name: "Class", path: "#" },
-        { id: 6.4, name: "Event", path: "#" },
+        { name: "NCC", path: "#" },
+        { name: "Exam", path: "#" },
+        { name: "Class", path: "#" },
+        { name: "Event", path: "#" },
       ],
     },
     {
@@ -86,10 +87,10 @@ const Navbar = () => {
       isDropDown: true,
       name: "Feedback",
       dropDownItems: [
-        { id: 9.1, name: "Student", path: "#" },
-        { id: 9.2, name: "College", path: "#" },
-        { id: 9.3, name: "Class", path: "#" },
-        { id: 9.4, name: "Event", path: "#" },
+        { name: "Student", path: "#" },
+        { name: "College", path: "#" },
+        { name: "Class", path: "#" },
+        { name: "Event", path: "#" },
       ],
     },
   ];
@@ -109,32 +110,24 @@ const Navbar = () => {
       >
         <ul className="flex flex-col md:flex-row md:justify-between  gap-4 max-w-screen-xl  mx-auto text-white">
           {/* ==== Map on NAV__ITEMS ====  */}
-          {NAV__ITEMS.map((ITEM) => {
-            return (
-              <li key={ITEM.id} className={`${styles.dropdown} duration-500`}>
-                <Link
-                  className="flex items-center gap-1 md:hover:underline"
-                  href={ITEM?.path || "#"}
-                  onClick={() => {
-                    ITEM.isDropDown ? "" : setNavbarVisible(!navbarVisible);
-                  }}
-                >
-                  {ITEM.name}
+          {NAV__ITEMS.map((ITEM, index) => (
+            <li key={index} className={`${styles.dropdown} duration-500`}>
+              <Link
+                className="flex items-center gap-1 md:hover:underline"
+                href={ITEM?.path || "#"}
+              >
+                {ITEM.name}
 
-                  {/* If ITEM.isDropDown is true then display Angle Down icon  */}
-                  {ITEM.isDropDown && <FontAwesomeIcon icon={faAngleDown} />}
-                </Link>
+                {/* If ITEM is dropdown display a angleDown icon */}
+                {ITEM.isDropDown && <FontAwesomeIcon icon={faAngleDown} />}
+              </Link>
 
-                {/* {If ITEM.isDropDown is true then display <DropDownItem /> components} */}
-                {ITEM.isDropDown && (
-                  <DropDownItem
-                    dropDownItemsList={ITEM.dropDownItems}
-                    setNavbarVisible={setNavbarVisible}
-                  />
-                )}
-              </li>
-            );
-          })}
+              {/* {If ITEM is DropDown then display <DropDownItem /> components} */}
+              {ITEM.isDropDown && (
+                <DropDownItem dropDownItemsList={ITEM.dropDownItems} />
+              )}
+            </li>
+          ))}
         </ul>
 
         {/* ==== This div display only in small screen ===== */}
