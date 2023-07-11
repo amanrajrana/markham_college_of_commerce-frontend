@@ -1,47 +1,8 @@
-import {
-  faBriefcase,
-  faChalkboardTeacher,
-  faCogs,
-  faGraduationCap,
-  faUniversity,
-  faUsers,
-} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./styles.module.css";
 
 
-const Highlight = ({ iconName, heading, text }) => {
-  let icon = null;
-
-  switch (iconName) {
-    case "faGraduationCap":
-      icon = faGraduationCap;
-      break;
-
-    case "faUsers":
-      icon = faUsers;
-      break;
-
-    case "faCogs":
-      icon = faCogs;
-      break;
-
-    case "faChalkboardTeacher":
-      icon = faChalkboardTeacher;
-      break;
-
-    case "faBriefcase":
-      icon = faBriefcase;
-      break;
-
-    case "faUniversity":
-      icon = faUniversity;
-      break;
-
-    default:
-      icon = faGraduationCap;
-  }
-
+const Highlight = ({ icon, heading, text }) => {
   return (
     <div className={`${styles.flipContainer} cursor-context-menu flex gap-4`}>
       <FontAwesomeIcon
