@@ -1,0 +1,53 @@
+.toastTimingAnimation {
+  animation-name: toastTimingAnimation;
+  animation-delay: 100ms;
+  animation-timing-function: ease;
+  animation-duration: 5s;
+}
+
+@keyframes toastTimingAnimation {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.horizontalShaking {
+  animation-name: horizontal-shaking;
+  animation-duration: 150ms;
+  animation-timing-function: ease-in;
+}
+
+@keyframes horizontal-shaking {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.spinier {
+  animation-name: spinier;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spinier {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
