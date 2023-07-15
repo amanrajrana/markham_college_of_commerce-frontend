@@ -14,7 +14,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const SignUpForm = () => {
-  // State Variables
+  // FORM VARIABLES
   const [firstName, setFirstName] = useState(""); // To store first name
   const [lastName, setLastName] = useState(""); // To store last name
   const [program, setProgram] = useState("default"); // To store program
@@ -22,15 +22,21 @@ const SignUpForm = () => {
   const [password, setPassword] = useState(""); // To store password
   const [confirmPassword, setConfirmPassword] = useState(""); // To confirm password
   const [phoneNumber, setPhoneNumber] = useState(""); // WhatsApp Number
+
+  // TOAST RELATED VARIABLES
   const [isToastVisible, setIsToastVisible] = useState(false); // To show toast
   const [toast, setToast] = useState({}); // {type: "", message: ""}
+
+  // LOADING SPINNER VARIABLES
   const [isLoading, setIsLoading] = useState(false); // To show loading spinner
+
+  // OTP BOX
   const [isOtpSend, setIsOtpSend] = useState(false); // To show otp box
   const [otp, setOtp] = useState(""); // To store otp
-  const [resendOptStatus, setResendOptStatus] = useState({
-    isActive: false,
-    timer: 60,
-  }); // To show resend otp button
+
+  // RESEND OTP RELATED VARIABLES
+  const [isOtpResendTimerActive, setIsOtpResendTimerActive] = useState(false); // To show resend otp button
+  const [otpResendTimer, setOtpResendTimer] = useState(0); // To store resend otp timer
 
   // Function to Check if password and confirm password are same
   const handleConfirmPassword = () => {
@@ -244,30 +250,27 @@ const SignUpForm = () => {
 
   // Function to add timer for resend otp
   const setTimeOutToResendOtp = () => {
-    setResendOptStatus({
-      isActive: false,
-      timer: 60,
-    });
-
-    setTimeout(() => {
-      setResendOptStatus({
-        isActive: true,
-        timer: 60,
-      });
-    }, 60000);
+    // Set timer to resend otp
+    setOtpResendTimer(60);
+    setIsOtpResendTimerActive(true);
 
     const timer = setInterval(() => {
-      setResendOptStatus((prevState) => {
-        return {
-          ...prevState,
-          timer: prevState.timer - 1,
-        };
+      setOtpResendTimer((prevTimer) => {
+        if (prevTimer === 0) {
+          setIsOtpResendTimerActive(false);
+          clearInterval(timer);
+          return prevTimer;
+        }
+        return prevTimer - 1;
       });
     }, 1000);
   };
 
   // Function to resend otp
   const resendOtp = () => {
+    // Set timer to resend otp
+    setTimeOutToResendOtp();
+
     // Session Id
     const sessionId = sessionStorage.getItem("sessionId");
 
@@ -302,9 +305,6 @@ const SignUpForm = () => {
             type: "success",
             message: data.message,
           });
-
-          // Set timer to resend otp
-          setTimeOutToResendOtp();
 
           return;
         }
@@ -511,18 +511,20 @@ const SignUpForm = () => {
             action=""
           >
             <OtpBox otp={otp} setOtp={setOtp} />
+
+            {/* Resend otp button */}
             <div>
               <p className="text-center">
                 Resend otp{" "}
-                {resendOptStatus.isActive ? (
+                {isOtpResendTimerActive ? (
+                  <span>in {otpResendTimer}s</span>
+                ) : (
                   <span
                     className="text-primary hover:underline cursor-pointer"
                     onClick={resendOtp}
                   >
                     click here
                   </span>
-                ) : (
-                  <span>in {resendOptStatus.timer}s</span>
                 )}
               </p>
             </div>
