@@ -15,7 +15,7 @@ const LogoAndInfo = () => {
           />
         </Link>
         <div className="hidden md:block">
-          <Button href={'/login'} text={'Log In'}/>
+          <Button href={'/student/login'} text={'Log In'}/>
         </div>
       </div>
     </div>

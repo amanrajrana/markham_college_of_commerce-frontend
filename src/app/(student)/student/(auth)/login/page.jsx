@@ -26,7 +26,7 @@ const Login = () => {
         </div>
         <Link
           className="duration-500 bg-primary py-2 px-4 w-full text-center text-white hover:underline font-medium"
-          href="/signup"
+          href="/student/signup"
         >
           Register
         </Link>

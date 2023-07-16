@@ -11,9 +11,13 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const SignUpForm = () => {
+  // next router
+  const router = useRouter();
+
   // FORM VARIABLES
   const [firstName, setFirstName] = useState(""); // To store first name
   const [lastName, setLastName] = useState(""); // To store last name
@@ -33,6 +37,7 @@ const SignUpForm = () => {
   // OTP BOX
   const [isOtpSend, setIsOtpSend] = useState(false); // To show otp box
   const [otp, setOtp] = useState(""); // To store otp
+  const [buttonText, setButtonText] = useState("verify"); // Button text
 
   // RESEND OTP RELATED VARIABLES
   const [isOtpResendTimerActive, setIsOtpResendTimerActive] = useState(false); // To show resend otp button
@@ -145,6 +150,7 @@ const SignUpForm = () => {
 
           // Store session id in session storage
           sessionStorage.setItem("sessionId", data.sessionId);
+
           return;
         }
 
@@ -226,6 +232,12 @@ const SignUpForm = () => {
 
           // Store authorization token in session storage
           sessionStorage.setItem("authorization", data.authorization);
+
+          // Redirect to dashboard when otp is verified
+          setButtonText("Redirecting..."); // Change button text
+          setTimeout(() => {
+            router.replace("/student/dashboard");
+          }, 4000);
 
           return;
         }
@@ -491,7 +503,7 @@ const SignUpForm = () => {
             Already Registered?{" "}
             <Link
               className="duration-500 text-primary hover:underline font-medium cursor-pointer"
-              href="/login"
+              href="/student/login"
             >
               Login
             </Link>
@@ -529,7 +541,7 @@ const SignUpForm = () => {
               </p>
             </div>
             <div className="my-8 w-full">
-              <SubmitButton loading={isLoading} text={"Verify"} />
+              <SubmitButton loading={isLoading} text={buttonText} />
             </div>
           </form>
         </div>
