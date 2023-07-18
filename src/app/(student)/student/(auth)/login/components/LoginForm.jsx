@@ -4,10 +4,12 @@ import InputBox from "@/components/InputBox";
 import PasswordInputBox from "@/components/PasswordInputBox";
 import SubmitButton from "@/components/SubmitButton";
 import Toast from "@/components/Toast";
-import apiURL from "@/config";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+
+// set api url to make api calls
+const apiURL = process.env.NEXT_PUBLIC_API_HOST;
 
 const LoginForm = () => {
   // next Router
@@ -49,7 +51,7 @@ const LoginForm = () => {
 
     try {
       setLoading(true); // LOADING STARTED
-
+      console.log("api url", apiURL);
       fetch(`${apiURL}/student/signin`, options)
         .then((res) => res.json())
         .then((data) => {

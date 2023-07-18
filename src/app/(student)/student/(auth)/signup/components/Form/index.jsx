@@ -6,13 +6,14 @@ import OtpBox from "@/components/OtpBox";
 import PasswordInputBox from "@/components/PasswordInputBox";
 import SubmitButton from "@/components/SubmitButton";
 import Toast from "@/components/Toast";
-import apiURL from "@/config";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+
+const apiURL = process.env.NEXT_PUBLIC_API_HOST;
 
 const SignUpForm = () => {
   // next router
