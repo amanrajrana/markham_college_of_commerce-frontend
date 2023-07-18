@@ -1,7 +1,9 @@
 //
-const apiURL =
-  process.env.NODE_ENV === "production"
-    ? "https://apimcc.amanrajrana.engineer"
-    : "http://localhost:5000";
+const apiURL = () => {
+  if (!process.env.API_HOST) {
+    throw new Error("API_HOST environment variable not set");
+  }
+  return process.env.API_HOST;
+};
 
 export default apiURL;
