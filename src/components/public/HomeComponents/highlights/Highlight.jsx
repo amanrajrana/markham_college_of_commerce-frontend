@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./styles.module.css";
 
-
 const Highlight = ({ icon, heading, text }) => {
   return (
-    <div className={`${styles.flipContainer} cursor-context-menu flex gap-4`}>
+    <div
+      className={`${styles.flipContainer} animation-on-scroll cursor-context-menu flex gap-4`}
+    >
       <FontAwesomeIcon
         className={`${styles.flipIcon} text-4xl text-blue-900 p-4 rounded-full h-12 w-12 bg-secondary`}
         icon={icon}

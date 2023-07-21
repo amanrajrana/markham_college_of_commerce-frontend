@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className={`${styles.footer} mt-4 px-3 overflow-hidden`}>
       <div className="py-8 max-w-screen-xl mx-auto grid md:grid-cols-11 gap-16">
         {/* ====== Logo ======== */}
-        <div className="col-span-3">
+        <div className="animation-on-scroll col-span-3">
           <Image
             className="max-w-full invert self-center mx-auto"
             src={"/logo.webp"}
@@ -20,12 +20,12 @@ const Footer = () => {
         </div>
 
         {/* ======== Google Map ======= */}
-        <div className="col-span-4">
+        <div className="animation-on-scroll col-span-4">
           <GoogleMap />
         </div>
 
         {/* ======== Get In Touch ========== */}
-        <div className="text-white col-span-4">
+        <div className="animation-on-scroll text-white col-span-4">
           <GetInTouch />
         </div>
       </div>

@@ -25,7 +25,7 @@ const Feature = ({ iconName, heading, text, link }) => {
       icon = faBook;
   }
   return (
-    <div className="flex flex-col items-start gap-4 p-3 hover:scale-105 duration-500">
+    <div className="animation-on-scroll flex flex-col items-start gap-4 p-3 hover:scale-105 duration-500">
       <FontAwesomeIcon
         className="border border-primary text-xl p-3 text-primary hover:bg-primary hover:text-white duration-500"
         icon={icon}

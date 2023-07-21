@@ -11,7 +11,7 @@ const NoticesAndEvents = () => {
 
       <div className="max-w-screen-xl mx-auto grid md:grid-cols-3 gap-8">
         {/* ===== Notice Container ===== */}
-        <div className="grid gap-8 shadow-2xl p-4 md:col-span-2">
+        <div className="animation-on-scroll grid gap-8 shadow-2xl p-4 md:col-span-2">
           <div className="h-fit">
             <h3 className="text-2xl font-semibold">
               <FontAwesomeIcon className="mr-2" icon={faBell} />
@@ -27,7 +27,7 @@ const NoticesAndEvents = () => {
         </div>
 
         {/* ====== Important Link ===== */}
-        <div className="bg-gradient-to-tl w-full to-blue-950 from-blue-900 text-white p-4">
+        <div className="animation-on-scroll bg-gradient-to-tl w-full to-blue-950 from-blue-900 text-white p-4">
           <div className="h-fit">
             <h3 className="text-2xl font-semibold">
               <FontAwesomeIcon className="mr-2" icon={faLink} />

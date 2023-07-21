@@ -24,7 +24,7 @@ const PrincipleMsg = () => {
           </p>
         </div>
 
-        <div className=" flex justify-center flex-col">
+        <div className="animation-on-scroll flex justify-center flex-col">
           <FontAwesomeIcon
             className="text-5xl text-slate-400"
             icon={faQuoteLeft}
