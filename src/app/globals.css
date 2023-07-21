@@ -25,6 +25,6 @@
 }
 
 .animation-on-scroll.active-animation-on-scroll {
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   opacity: 1;
 }
