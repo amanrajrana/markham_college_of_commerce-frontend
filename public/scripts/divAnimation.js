@@ -6,7 +6,7 @@ function reveal() {
   for (let i = 0; i < reveals.length; i++) {
     let windowHeight = window.innerHeight;
     let revealTop = reveals[i].getBoundingClientRect().top;
-    let revealPoint = 100;
+    let revealPoint = 10;
 
     if (revealTop < windowHeight - revealPoint) {
       reveals[i].classList.add("active-animation-on-scroll");
