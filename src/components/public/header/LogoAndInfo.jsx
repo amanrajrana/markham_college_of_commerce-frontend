@@ -11,7 +11,7 @@ const LogoAndInfo = () => {
             src={"/logo.webp"}
             alt="Markham college of commerce"
             width={400}
-            height={90}
+            height={119}
           />
         </Link>
         <div className="hidden md:block">
