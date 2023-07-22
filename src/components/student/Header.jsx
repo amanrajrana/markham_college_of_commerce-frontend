@@ -11,7 +11,7 @@ const Header = () => {
             src="/logo.webp"
             alt="logo"
             width={250}
-            height={100}
+            height={74}
           />
         </Link>
         <ul className="flex gap-8 text-white">
