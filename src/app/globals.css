@@ -48,4 +48,22 @@
   .animation-on-scroll:nth-child(6) {
     transition-delay: 1200ms;
   }
+  .animation-on-scroll:nth-child(7) {
+    transition-delay: 1100ms;
+  }
+  .animation-on-scroll:nth-child(8) {
+    transition-delay: 1200ms;
+  }
+  .animation-on-scroll:nth-child(9) {
+    transition-delay: 1300ms;
+  }
+  .animation-on-scroll:nth-child(10) {
+    transition-delay: 1400ms;
+  }
+  .animation-on-scroll:nth-child(11) {
+    transition-delay: 1500ms;
+  }
+  .animation-on-scroll:nth-child(12) {
+    transition-delay: 2400ms;
+  }
 }

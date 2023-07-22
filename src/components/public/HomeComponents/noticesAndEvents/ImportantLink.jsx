@@ -43,7 +43,7 @@ const ImportantLink = () => {
       {impLinks.map((link) => (
         <Link
           key={link.id}
-          className="border-t border-b border-white p-4 hover:text-primary"
+          className="animation-on-scroll border-t border-b border-white p-4"
           href={link.path}
         >
           {link.text}
