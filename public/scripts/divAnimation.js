@@ -1,4 +1,5 @@
 window.addEventListener("scroll", reveal);
+reveal();
 
 function reveal() {
   let reveals = document.querySelectorAll(".animation-on-scroll");
