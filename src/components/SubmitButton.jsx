@@ -2,8 +2,9 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styles from "./styles.module.css";
+import PropTypes from 'prop-types'
 
-const SubmitButton = ({ loading, text }) => {
+const SubmitButton = ({ loading, loadingText, text }) => {
   return (
     <button
       disabled={loading}
@@ -18,13 +19,20 @@ const SubmitButton = ({ loading, text }) => {
       {loading ? (
         <>
           <FontAwesomeIcon className={styles.spinier} icon={faSpinner} spin />
-          <span className="mx-2 capitalize">Loading...</span>
+          <span className="mx-2 capitalize">{loadingText || "Loading..."}</span>
         </>
       ) : (
         text
       )}
     </button>
   );
+};
+
+
+SubmitButton.propTypes = {
+  loading: PropTypes.bool,
+  loadingText: PropTypes.string,
+  text: PropTypes.string.isRequired,
 };
 
 export default React.memo(SubmitButton);

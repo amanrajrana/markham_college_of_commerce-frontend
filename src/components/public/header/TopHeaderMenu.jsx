@@ -13,7 +13,7 @@ const TopHeaderMenu = () => {
         <Link href={"/"} className="md:hidden">
           <Image
             src={"/logo.webp"}
-            height={30}
+            height={45}
             width={150}
             alt="Markham College of commerce"
           />
