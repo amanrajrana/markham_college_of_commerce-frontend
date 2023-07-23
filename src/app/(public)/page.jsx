@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <NoticesAndEvents />
       <EnrollmentStatistics />
       <Features />
       <Highlights />
-      <NoticesAndEvents />
       <Gallery />
       <PrincipleMsg />
       <SupportLink />
