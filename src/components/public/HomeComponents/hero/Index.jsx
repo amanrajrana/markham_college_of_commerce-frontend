@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 const Hero = () => {
   return (
     <section
-      className={`${styles.hero} max-h-[1200px] min-h-[800px] md:min-h-[600px] h-[90vh] p-3`}
+      className={`${styles.hero} max-h-[600px] lg:max-h-[800px] min-h-[600px] md:min-h-[600px] h-[95vh] p-3`}
     >
       <div className="flex flex-col gap-4 justify-center h-full max-w-screen-xl mx-auto text-white">
         {/* ========== Section Text START ========== */}
