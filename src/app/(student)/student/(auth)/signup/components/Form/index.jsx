@@ -6,8 +6,13 @@ import OtpBox from "@/components/OtpBox";
 import PasswordInputBox from "@/components/PasswordInputBox";
 import SubmitButton from "@/components/SubmitButton";
 import Toast from "@/components/Toast";
+import { checkPasswordPolicy } from "@/utils/passwordPolicy";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faGraduationCap,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -19,14 +24,17 @@ const SignUpForm = () => {
   // next router
   const router = useRouter();
 
-  // FORM VARIABLES
-  const [firstName, setFirstName] = useState(""); // To store first name
-  const [lastName, setLastName] = useState(""); // To store last name
-  const [program, setProgram] = useState("default"); // To store program
-  const [email, setEmail] = useState(""); // To store email
-  const [password, setPassword] = useState(""); // To store password
-  const [confirmPassword, setConfirmPassword] = useState(""); // To confirm password
-  const [phoneNumber, setPhoneNumber] = useState(""); // WhatsApp Number
+  // FORM Data
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    program: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    phoneNumber: "",
+    whatsappNumber: "",
+  });
 
   // TOAST RELATED VARIABLES
   const [isToastVisible, setIsToastVisible] = useState(false); // To show toast
@@ -44,76 +52,39 @@ const SignUpForm = () => {
   const [isOtpResendTimerActive, setIsOtpResendTimerActive] = useState(false); // To show resend otp button
   const [otpResendTimer, setOtpResendTimer] = useState(0); // To store resend otp timer
 
-  // Function to Check if password and confirm password are same
-  const handleConfirmPassword = () => {
-    if (password !== confirmPassword) {
-      return false;
-    }
-    return true;
-  };
-
   // Function to handle change in input fields
   const onChangeHandler = (e) => {
-    const { name, value } = e.target;
-    switch (name) {
-      case "firstName":
-        setFirstName(value);
-        break;
-
-      case "lastName":
-        setLastName(value);
-        break;
-
-      case "program":
-        setProgram(value);
-        break;
-
-      case "email":
-        setEmail(value);
-        break;
-
-      case "password":
-        setPassword(value);
-        break;
-
-      case "confirmPassword":
-        setConfirmPassword(value);
-        break;
-
-      case "phoneNumber":
-        setPhoneNumber(value);
-        break;
-    }
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [e.target.name]: e.target.value,
+      };
+    });
   };
 
   // Function to handle form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Check password length is greater than 8 char
-    if (password.length < 8) {
-      setIsToastVisible(true);
-      setToast({
-        type: "warning",
-        message: "Enter a strong password",
-      });
-      return;
-    }
-
-    if (!handleConfirmPassword()) {
-      setIsToastVisible(true);
-      setToast({
-        type: "warning",
-        message: "Password not match",
-      });
-      return;
-    }
-
     /**
-     * Send data to server
-     * If success, show toast and render otp box
-     * If error, show toast with error message
+     * @description This module is used to check password policy. i.e password length, password strength
+     * etc and also check password and confirm password should be same.
+     * @returns {object} - Returns object with @status {boolean} and @message {string}.
      */
+    const passwordPolicy = checkPasswordPolicy(
+      formData.password,
+      formData.confirmPassword
+    );
+
+    // return if password policy returns status false
+    if (!passwordPolicy.status) {
+      setIsToastVisible(true);
+      setToast({
+        type: "warning",
+        message: passwordPolicy.message,
+      });
+      return;
+    }
 
     // Show loading spinner
     setIsLoading(true);
@@ -124,13 +95,13 @@ const SignUpForm = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        firstName,
-        lastName,
-        program,
-        email,
-        password,
-        confirmPassword,
-        phoneNumber,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        program: formData.program,
+        email: formData.email,
+        password: formData.password,
+        phoneNumber: formData.phoneNumber,
+        whatsappNumber: formData.whatsappNumber,
       }),
     };
 
@@ -370,7 +341,7 @@ const SignUpForm = () => {
                   name="firstName"
                   placeholder="First Name*"
                   type="text"
-                  value={firstName}
+                  value={formData.firstName}
                   onChangeHandler={onChangeHandler}
                   Required={true}
                 />
@@ -379,7 +350,7 @@ const SignUpForm = () => {
                   name="lastName"
                   placeholder="Last Name"
                   type="text"
-                  value={lastName}
+                  value={formData.lastName}
                   onChangeHandler={onChangeHandler}
                   Required={false}
                 />
@@ -394,7 +365,7 @@ const SignUpForm = () => {
                 placeholder="email@example.com"
                 type="email"
                 id="email"
-                value={email}
+                value={formData.email}
                 icon={faEnvelope}
                 onChangeHandler={onChangeHandler}
                 Required={true}
@@ -407,10 +378,26 @@ const SignUpForm = () => {
               </label>
               <InputBox
                 name="phoneNumber"
-                placeholder="WhatsApp Number"
+                placeholder="+91 | 00000 00000"
                 type="tel"
                 id="phoneNumber"
-                value={phoneNumber}
+                value={formData.phoneNumber}
+                icon={faPhone}
+                onChangeHandler={onChangeHandler}
+                Required={true}
+              />
+            </div>
+
+            <div className="w-full flex-col flex">
+              <label htmlFor="whatsappNumber">
+                WhatsApp Number<span className="text-red-600">*</span>
+              </label>
+              <InputBox
+                name="whatsappNumber"
+                placeholder="Active WhatsApp Number"
+                type="tel"
+                id="whatsappNumber"
+                value={formData.whatsappNumber}
                 icon={faWhatsapp}
                 onChangeHandler={onChangeHandler}
                 Required={true}
@@ -426,7 +413,7 @@ const SignUpForm = () => {
                 placeholder="Use 8 or more characters with a mix of letters, numbers & symbols"
                 type="password"
                 id="password"
-                value={password}
+                value={formData.password}
                 Required={true}
                 onChangeHandler={onChangeHandler}
               />
@@ -441,7 +428,7 @@ const SignUpForm = () => {
                 placeholder="Use 8 or more characters with a mix of letters, numbers & symbols"
                 type="password"
                 id="confirmPassword"
-                value={confirmPassword}
+                value={formData.confirmPassword}
                 Required={true}
                 onChangeHandler={onChangeHandler}
               />
@@ -460,7 +447,7 @@ const SignUpForm = () => {
                   className="py-2 px-3 bg-gray-100 flex-1 cursor-pointer w-10/12"
                   name="program"
                   id="program"
-                  value={program}
+                  value={formData.program}
                   onChange={onChangeHandler}
                   required
                 >
