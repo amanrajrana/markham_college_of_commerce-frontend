@@ -1,82 +1,77 @@
 "use client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
+import React, { useEffect, useRef } from "react";
+import styles from "@components/styles.module.css";
 import {
   faCheck,
   faExclamation,
   faInfo,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PropTypes from "prop-types";
-import React, { useState, useEffect } from "react";
-import styles from "@components/styles.module.css";
+
+const iconColorMapping = {
+  success: { icon: faCheck, color: "green" },
+  danger: { icon: faXmark, color: "red" },
+  warning: { icon: faExclamation, color: "yellow" },
+  info: { icon: faInfo, color: "blue" },
+  default: { icon: faCheck, color: "gray" },
+};
 
 const Toast = ({ toastType, message, setIsToastVisible }) => {
-  const [color, setColor] = useState("green");
-  const [icon, setIcon] = useState(faCheck);
+  const { icon, color } =
+    iconColorMapping[toastType] || iconColorMapping.default;
 
-  function hideToast() {
-    setTimeout(() => {
-      setIsToastVisible(false);
-    }, 5100); //5000ms for waiting and 100ms for animation delay
-  }
+  const hideTimeoutRef = useRef(null);
 
   useEffect(() => {
-    hideToast();
-    switch (toastType) {
-      case "success":
-        setIcon(faCheck);
-        setColor("green");
-        break;
+    const hideToast = () => {
+      setIsToastVisible(false);
+    };
 
-      case "danger":
-        setIcon(faXmark);
-        setColor("red");
-        break;
+    const timeoutId = setTimeout(() => {
+      hideToast();
+    }, 5100); //5000ms for waiting and 100ms for animation delay
 
-      case "warning":
-        setIcon(faExclamation);
-        setColor("yellow");
-        break;
+    hideTimeoutRef.current = timeoutId;
 
-      case "info":
-        setIcon(faInfo);
-        setColor("blue");
-        break;
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, [toastType, setIsToastVisible]);
 
-      default:
-        setIcon(faCheck);
-        setColor("gray");
-        break;
+  const handleToastClose = () => {
+    setIsToastVisible(false);
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [toastType]);
+  };
 
   return (
-    <>
-      <div
-        className={`${styles.horizontalShaking} fixed top-8 lg:right-8 w-80 max-w-full shadow-2xl shadow-black`}
-      >
-        <div className={`bg-${color}-300 p-3`}>
-          <div
-            className="absolute right-0 z-10 top-0 w-6 h-6 flex justify-center items-center cursor-pointer font-semibold text-lg"
-            onClick={() => setIsToastVisible(false)}
-          >
-            x
-          </div>
-          <div className="grid grid-cols-12 items-center">
-            <div
-              className={`flex items-center justify-center bg-${color}-700 rounded-full w-full h-6`}
-            >
-              <FontAwesomeIcon className="text-sm text-white" icon={icon} />
-            </div>
-            <p className="col-span-11 px-1.5">{message}</p>
-          </div>
-        </div>
+    <div
+      className={`${styles.horizontalShaking} fixed top-4 lg:top-8 lg:right-8 w-80 max-w-full shadow-2xl shadow-black`}
+    >
+      <div className={`bg-${color}-300 p-3`}>
         <div
-          className={`w-full h-1.5 bg-${color}-700 ${styles.toastTimingAnimation}`}
-        ></div>
+          className="absolute right-0 z-10 top-0 w-6 h-6 flex justify-center items-center cursor-pointer font-semibold text-lg"
+          onClick={handleToastClose}
+        >
+          x
+        </div>
+        <div className="grid grid-cols-12 items-center">
+          <div
+            className={`flex items-center justify-center bg-${color}-700 rounded-full w-full h-6`}
+          >
+            <FontAwesomeIcon className="text-sm text-white" icon={icon} />
+          </div>
+          <p className="col-span-11 px-1.5">{message}</p>
+        </div>
       </div>
+      <div
+        className={`w-full h-1.5 bg-${color}-700 ${styles.toastTimingAnimation}`}
+      ></div>
       {/* Don't Delete this code this is just dummy code to load the tailwind classes  */}
       <div className="hidden">
         <span className="bg-red-300 text-red-700 bg-red-700"></span>
@@ -85,7 +80,7 @@ const Toast = ({ toastType, message, setIsToastVisible }) => {
         <span className="bg-yellow-300 text-yellow-700  bg-yellow-700"></span>
       </div>
       {/* Dummy div end */}
-    </>
+    </div>
   );
 };
 
