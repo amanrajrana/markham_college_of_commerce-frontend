@@ -25,7 +25,8 @@ const checkPasswordPolicy = (password, confirmPassword) => {
   if (!passwordStrength) {
     return {
       status: false,
-      message: "Enter a strong password",
+      message:
+        "Enter a strong password. i.e. combination of uppercase, lowercase, number and special character.",
     };
   }
 
