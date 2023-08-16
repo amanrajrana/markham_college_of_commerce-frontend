@@ -19,7 +19,7 @@
 
 .animation-on-scroll {
   position: relative;
-  transform: translateY(150px) scale(0.5);
+  transform: translateY(150px) scale(0.75);
   opacity: 0;
   transition: all 1s ease;
 }

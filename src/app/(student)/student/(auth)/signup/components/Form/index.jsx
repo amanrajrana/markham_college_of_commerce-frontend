@@ -160,7 +160,7 @@ const SignUpForm = () => {
     if (isNaN(otpNumber)) {
       setIsToastVisible(true);
       setToast({
-        type: "warning",
+        type: "danger",
         message: "Enter a valid OTP",
       });
       return;

@@ -74,10 +74,14 @@ const Toast = ({ toastType, message, setIsToastVisible }) => {
       ></div>
       {/* Don't Delete this code this is just dummy code to load the tailwind classes  */}
       <div className="hidden">
-        <span className="bg-red-300 text-red-700 bg-red-700"></span>
-        <span className="bg-green-300 text-green-700 bg-green-700"></span>
-        <span className="bg-blue-300 text-blue-700 bg-blue-700"></span>
-        <span className="bg-yellow-300 text-yellow-700  bg-yellow-700"></span>
+        <span className="bg-red-300 text-red-700"></span>
+        <span className="bg-green-300 text-green-700"></span>
+        <span className="bg-blue-300 text-blue-700"></span>
+        <span className="bg-yellow-300 text-yellow-700 "></span>
+        <span className=" bg-red-700"></span>
+        <span className=" bg-green-700"></span>
+        <span className="bg-blue-700"></span>
+        <span className="bg-yellow-700"></span>
       </div>
       {/* Dummy div end */}
     </div>
