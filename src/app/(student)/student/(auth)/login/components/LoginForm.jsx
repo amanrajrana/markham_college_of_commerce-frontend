@@ -26,6 +26,11 @@ const LoginForm = () => {
 
   // FORM HANDLERS
   const onChangeHandler = (e) => {
+    if (e.target.name === "rememberMe") {
+      setFormData({ ...formData, [e.target.name]: e.target.checked });
+      return;
+    }
+    
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
