@@ -15,26 +15,25 @@ const LoginForm = () => {
   // next Router
   const router = useRouter();
 
-  // FORM STATE VARIABLES
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  // TOAST STATE VARIABLES
-  const [isToastVisible, setIsToastVisible] = useState(false);
-  const [toast, setToast] = useState({ type: "", message: "" });
-
-  // LOADING STATE VARIABLE
-  const [loading, setLoading] = useState(false);
+  const [isToastVisible, setIsToastVisible] = useState(false); // TOAST STATE VARIABLE
+  const [toast, setToast] = useState({ type: "", message: "" }); // TOAST TYPE AND MESSAGE STATE VARIABLE
+  const [loading, setLoading] = useState(false); // SPINNER STATE VARIABLE
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    rememberMe: false,
+  }); // FORM DATA STATE VARIABLE
 
   // FORM HANDLERS
   const onChangeHandler = (e) => {
-    const { name, value } = e.target;
-    if (name === "email") setEmail(value);
-    if (name === "password") setPassword(value);
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    const email = formData.email.trim();
+    const password = formData.password.trim();
+
     if (email === "" || password === "") {
       setIsToastVisible(true);
       setToast({ type: "warning", message: "Please fill all the fields" });
@@ -64,8 +63,12 @@ const LoginForm = () => {
               message: data.message,
             });
 
-            // Save the token in local storage
-            localStorage.setItem("studentToken", data.token);
+            // If remember me is checked then save the token in local storage else save it in session storage
+            if (formData.rememberMe) {
+              localStorage.setItem("authorization", data.authorization);
+            } else {
+              sessionStorage.setItem("authorization", data.authorization);
+            }
 
             // redirect to dashboard
             router.replace("/student/dashboard");
@@ -114,7 +117,7 @@ const LoginForm = () => {
       >
         <InputBox
           name={"email"}
-          value={email}
+          value={formData.email}
           onChangeHandler={onChangeHandler}
           placeholder={"Enter your Email"}
           type="email"
@@ -122,10 +125,21 @@ const LoginForm = () => {
         />
         <PasswordInputBox
           name={"password"}
-          value={password}
+          value={formData.password}
           onChangeHandler={onChangeHandler}
           placeholder={"Enter your Password"}
         />
+        <div>
+          <input
+            onChange={onChangeHandler}
+            className="mx-2 cursor-pointer"
+            type="checkbox"
+            name="rememberMe"
+            id="rememberMe"
+            checked={formData.rememberMe}
+          />
+          <label htmlFor="rememberMe">Remember me!</label>
+        </div>
 
         <SubmitButton loading={loading} text={"Login"} />
       </form>
