@@ -19,7 +19,7 @@ const PrincipleMsg = () => {
             />
           </div>
 
-          <p className=" cursor-pointer bg-primary text-center p-2 w-full text-white font-semibold">
+          <p className=" cursor-pointer bg-primary-regular text-center p-2 w-full text-white font-semibold">
             Principle MCC
           </p>
         </div>

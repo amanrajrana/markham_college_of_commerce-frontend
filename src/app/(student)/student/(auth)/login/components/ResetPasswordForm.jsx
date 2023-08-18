@@ -370,7 +370,7 @@ const ResetPasswordForm = ({ role }) => {
                       <span>in {otpResendTimer}s</span>
                     ) : (
                       <span
-                        className="text-primary hover:underline cursor-pointer"
+                        className="text-primary-regular hover:underline cursor-pointer"
                         onClick={resendOtp}
                       >
                         click here

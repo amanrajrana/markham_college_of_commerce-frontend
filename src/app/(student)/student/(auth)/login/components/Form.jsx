@@ -23,7 +23,7 @@ const Form = () => {
               visibleForm === "loginForm" ? "resetPasswordForm" : "loginForm"
             )
           }
-          className="duration-500 text-primary hover:underline font-medium cursor-pointer"
+          className="duration-500 text-primary-regular hover:underline font-medium cursor-pointer"
         >
           {visibleForm === "loginForm" ? "Reset" : "Click here"}
         </span>

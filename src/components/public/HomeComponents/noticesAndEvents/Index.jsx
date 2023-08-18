@@ -17,7 +17,7 @@ const NoticesAndEvents = () => {
               <FontAwesomeIcon className="mr-2" icon={faBell} />
               Notice
             </h3>
-            <div className="h-0.5 w-16 bg-primary rounded-full"></div>
+            <div className="h-0.5 w-16 bg-primary-regular rounded-full"></div>
           </div>
 
           {/* Notices, Render on client side  */}
@@ -33,7 +33,7 @@ const NoticesAndEvents = () => {
               <FontAwesomeIcon className="mr-2" icon={faLink} />
               Important Link
             </h3>
-            <div className="h-0.5 w-16 bg-primary rounded-full"></div>
+            <div className="h-0.5 w-16 bg-primary-regular rounded-full"></div>
           </div>
           <ImportantLink />
         </div>

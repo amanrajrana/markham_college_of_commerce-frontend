@@ -106,7 +106,7 @@ const Navbar = () => {
       <nav
         className={`
         ${navbarVisible ? "top-0 visible" : "top-[-120%] invisible"} 
-          duration-500 p-10 bg-blue-950 fixed right-0 min-h-screen z-[5] w-full md:visible md:block md:min-h-fit md:h-auto md:static md:p-3 md:bg-primary overflow-y-auto`}
+          duration-500 p-10 bg-blue-950 fixed right-0 min-h-screen z-[5] w-full md:visible md:block md:min-h-fit md:h-auto md:static md:p-3 md:bg-primary-regular overflow-y-auto`}
       >
         <ul className="flex flex-col md:flex-row md:justify-between  gap-4 max-w-screen-xl  mx-auto text-white">
           {/* ==== Map on NAV__ITEMS ====  */}

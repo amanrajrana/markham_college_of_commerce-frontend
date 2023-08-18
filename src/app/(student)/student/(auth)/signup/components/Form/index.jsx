@@ -490,7 +490,7 @@ const SignUpForm = () => {
           <p className="text-center">
             Already Registered?{" "}
             <Link
-              className="duration-500 text-primary hover:underline font-medium cursor-pointer"
+              className="duration-500 text-primary-regular hover:underline font-medium cursor-pointer"
               href="/student/login"
             >
               Login
@@ -520,7 +520,7 @@ const SignUpForm = () => {
                   <span>in {otpResendTimer}s</span>
                 ) : (
                   <span
-                    className="text-primary hover:underline cursor-pointer"
+                    className="text-primary-regular hover:underline cursor-pointer"
                     onClick={resendOtp}
                   >
                     click here

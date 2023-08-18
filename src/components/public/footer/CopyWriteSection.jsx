@@ -6,7 +6,7 @@ const CopyWriteSection = () => {
         Developed by&nbsp;
         <a
           href="https://github.com/amanrajrana"
-          className="hover:text-primary duration-500"
+          className="hover:text-primary-regular duration-500"
         >
           Aman Raj Rana
         </a>

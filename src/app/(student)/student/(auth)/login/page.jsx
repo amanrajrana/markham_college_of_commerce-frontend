@@ -25,7 +25,7 @@ const Login = () => {
           <span className="bg-white w-fit p-1 relative z-10">or</span>
         </div>
         <Link
-          className="duration-500 bg-primary py-2 px-4 w-full text-center text-white hover:underline font-medium"
+          className="duration-500 bg-primary-regular py-2 px-4 w-full text-center text-white hover:underline font-medium"
           href="/student/signup"
         >
           Register

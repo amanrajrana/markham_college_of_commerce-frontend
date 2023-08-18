@@ -20,7 +20,7 @@ const GetInTouch = () => {
         {/* ==== Address === */}
         <div className="flex items-center gap-4">
           <FontAwesomeIcon
-            className="text-4xl text-primary"
+            className="text-4xl text-primary-regular"
             icon={faLocationDot}
           />
           <p>{address}</p>
@@ -29,14 +29,14 @@ const GetInTouch = () => {
         {/* ======= Email =====  */}
         <div className="flex items-center gap-4">
           <FontAwesomeIcon
-            className="text-4xl text-primary"
+            className="text-4xl text-primary-regular"
             icon={faEnvelope}
           />
           <p>
             {emails.map((email) => (
               <a
                 key={email}
-                className="block hover:text-primary hover:underline duration-500"
+                className="block hover:text-primary-regular hover:underline duration-500"
                 href={`mailto:${email}`}
               >
                 {email}
@@ -47,12 +47,12 @@ const GetInTouch = () => {
 
         {/* ======== Mobile Numbers======  */}
         <div className="flex items-center gap-4">
-          <FontAwesomeIcon className="text-4xl text-primary" icon={faPhone} />
+          <FontAwesomeIcon className="text-4xl text-primary-regular" icon={faPhone} />
           <p>
             {phoneNumbers.map((phoneNumber) => (
               <a
                 key={phoneNumber}
-                className="block hover:text-primary hover:underline duration-500"
+                className="block hover:text-primary-regular hover:underline duration-500"
                 href={`tel:${phoneNumber}`}
               >
                 {phoneNumber}

@@ -13,7 +13,7 @@ const Notice = ({
   return (
     <div>
       {/* category */}
-      <p className="text-primary rounded-full text-xs">{category}</p>
+      <p className="text-primary-regular rounded-full text-xs">{category}</p>
       <h4 className="font-medium">{title}</h4>
       <p className="flex items-center gap-2 text-gray-700">
         <FontAwesomeIcon icon={faCalendarDays} />
