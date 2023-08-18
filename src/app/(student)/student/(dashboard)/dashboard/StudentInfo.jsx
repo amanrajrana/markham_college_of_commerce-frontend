@@ -5,7 +5,7 @@ import { faEnvelope, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const StudentInfo = () => {
   return (
-    <div className="border-t-4 border-t-blue-900 rounded-md bg-secondary p-4 shadow-sm">
+    <div className="border-t-4 border-t-blue-900 rounded-md bg-secondary py-4 px-2 shadow-md">
       {/* ======= STUDENT AVATAR ======= */}
       <Image
         className="border-blue-800 border-2 rounded-full mx-auto p-1"
@@ -17,23 +17,23 @@ const StudentInfo = () => {
       <h2 className="text-center my-4 font-bold text-lg w-full">
         Aman Raj Rana
       </h2>
-      <div className="grid grid-cols-5 gap-2 my-4 font-semibold">
+      <div className="grid grid-cols-1 sm:grid-cols-5 gap-1 my-4 font-semibold">
         <span className="text-blue-900 col-span-2">
-          <FontAwesomeIcon className="mx-2" icon={faUser} />
+          <FontAwesomeIcon className="mr-2" icon={faUser} />
           Name
         </span>
 
         <span className="col-span-3">Aman Raj Rana</span>
 
         <span className="text-blue-900 col-span-2">
-          <FontAwesomeIcon className="mx-2" icon={faEnvelope} />
+          <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
           Email
         </span>
 
         <span className="col-span-3">youremail@gmail.com</span>
 
         <span className="text-blue-900 col-span-2">
-          <FontAwesomeIcon className="mx-2" icon={faPhone} />
+          <FontAwesomeIcon className="mr-2" icon={faPhone} />
           Phone
         </span>
 

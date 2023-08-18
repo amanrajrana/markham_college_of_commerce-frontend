@@ -2,13 +2,13 @@ import StudentInfo from "./StudentInfo";
 
 const StudentDashboard = () => {
   return (
-    <div className="min-h-fit mx-2 border-2 border-primary-regular rounded-md">
-      <h1 className="bg-primary-regular px-4 py-2 text-secondary font-medium">
+    <div className="min-h-fit sm:mx-2 border-2 border-primary-regular rounded-md overflow-x-auto">
+      <h1 className="bg-primary-regular p-2 sm:p-4 text-secondary font-medium">
         Dashboard
       </h1>
       <div className="p-4">
-        <div className="flex gap-4">
-          <div className="w-full max-w-sm overflow-hidden">
+        <div className="flex gap-4 flex-col justify-center md:flex-row">
+          <div className="w-full mx-auto max-w-sm overflow-hidden">
             <StudentInfo />
           </div>
           <div className="flex-1">
