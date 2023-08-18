@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AVATAR from "../../user.png";
+import AVATAR from "../user.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 
