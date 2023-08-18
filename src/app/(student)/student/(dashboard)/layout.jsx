@@ -27,17 +27,19 @@ export default function RootLayout({ children }) {
         <div className="flex flex-col sm:flex-row h-screen overflow-hidden">
           {/* ======= Left Side Container ======= */}
           <div
-            className={`flex flex-col absolute top-0 sm:relative sm:translate-x-0 ${
+            className={`flex flex-col fixed top-0 sm:relative sm:translate-x-0 ${
               isMenuOpen ? "translate-x-0" : " -translate-x-full"
             } duration-500 w-fit  max-h-full overflow-y-auto no-scrollbar bg-blue-900 z-50 h-screen`}
           >
             {/* ======= College Logo ======= */}
             <div className="relative h-fit sm:bg-primary-regular p-1 pb-2 w-full">
-              <FontAwesomeIcon
-                icon={faXmark}
-                className="sm:hidden absolute translate-y-1/2 right-2 text-white text-3xl cursor-pointer"
-                onClick={() => setIsMenuOpen(false)}
-              />
+              <div className="sm:hidden absolute  m-2 right-2 text-white text-3xl cursor-pointer">
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  onClick={() => setIsMenuOpen(false)}
+                />
+              </div>
+
               {/* When isMenuOpen==true then render full logo else render only icon */}
               <Link href="/">
                 {isMenuOpen ? (
