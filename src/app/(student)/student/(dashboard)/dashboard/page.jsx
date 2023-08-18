@@ -1,4 +1,4 @@
-import StudentInfo from "./components/studentInfo";
+import StudentInfo from "./StudentInfo";
 
 const StudentDashboard = () => {
   return (
