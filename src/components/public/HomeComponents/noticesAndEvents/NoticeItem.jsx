@@ -22,7 +22,6 @@ const Notice = ({
         <a
           className="bg-blue-700 duration-500 hover:bg-blue-900 py-1 px-2 text-white rounded-full text-xs"
           href={downloadLink}
-          download
         >
           Download
         </a>
