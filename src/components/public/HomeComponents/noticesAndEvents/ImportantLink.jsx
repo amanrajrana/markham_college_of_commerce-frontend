@@ -1,53 +1,51 @@
-import Link from "next/link";
-
 const ImportantLink = () => {
   const impLinks = [
     {
-      id: 0,
-      text: "BCA Admission page",
-      path: "",
+      text: "» E-Kalyan Scholarship",
+      path: "https://ekalyan.cgg.gov.in/",
     },
     {
-      id: 3350,
-      text: "BCA Admission page",
-      path: "",
+      text: "» Exam Form - vbunuiv.in",
+      path: "https://www.vbuuniv.in/vbuexamform/login",
     },
     {
-      id: 330,
-      text: "BCA Admission page",
-      path: "",
+      text: "» Vinoba Bhave University (VBU)",
+      path: "http://vbu.ac.in/",
     },
     {
-      id: 70,
-      text: "BCA Admission page",
-      path: "",
+      text: "» Download Admit Card - vbunuiv.in",
+      path: "https://www.vbuuniv.in/login",
     },
     {
-      id: 30,
-      text: "BCA Admission page",
-      path: "",
+      text: "» Academic Bank of Credits (abc id)",
+      path: "https://www.abc.gov.in/",
+    },
+
+    {
+      text: "» Check Result - vbunuiv.in",
+      path: "http://result.vbuuniv.in/vbuuniv/student/result/pg/preview",
     },
     {
-      id: 20,
-      text: "BCA Admission page",
-      path: "",
-    },
-    {
-      id: 10,
-      text: "BCA Admission page",
-      path: "",
+      text: "» University Grants Commission (UGC)",
+      path: "https://www.ugc.ac.in/",
     },
   ];
   return (
     <div className="grid my-4">
-      {impLinks.map((link) => (
-        <Link
-          key={link.id}
-          className="animation-on-scroll border-t border-b border-white p-4"
-          href={link.path}
+      {impLinks.map((link, index) => (
+        <div
+          className="border-t border-b border-white w-full p-4 animation-on-scroll"
+          key={index}
         >
-          {link.text}
-        </Link>
+          <a
+            target="_blank"
+            referrerPolicy="no-referrer"
+            className="block duration-500 relative hover:translate-x-4"
+            href={link.path}
+          >
+            {link.text}
+          </a>
+        </div>
       ))}
     </div>
   );
