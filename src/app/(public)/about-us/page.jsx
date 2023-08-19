@@ -134,7 +134,7 @@ const AboutUs = () => {
           vocational subjects.
         </p>
 
-        <div>
+        <div className="max-w-full">
           <Heading2 headingText={"Facility"} />
           <div className="flex gap-4 flex-wrap">
             {FACILITY_KEYWORDS.map((keyword, index) => (
@@ -149,8 +149,8 @@ const AboutUs = () => {
         </div>
 
         {/* ====== Courses We Offer ====== */}
-        <div>
-          <div className="border overflow-x-auto no-scrollbar my-12">
+        <div className="max-w-full overflow-hidden">
+          <div className="border max-w-full overflow-x-auto no-scrollbar my-12">
             <h5 className="font-semibold text-2xl border-b border-primary-regular px-4 py-2">
               <FontAwesomeIcon
                 className="text-2xl mx-2 text-primary-regular"
@@ -226,7 +226,7 @@ const AboutUs = () => {
             </div>
           </div>
 
-          <div className="border overflow-x-auto no-scrollbar my-12">
+          <div className="border max-w-full overflow-x-auto no-scrollbar my-12">
             <h5 className="font-semibold text-2xl border-b border-primary-regular px-4 py-2">
               <FontAwesomeIcon
                 className="text-2xl mx-2 text-primary-regular"
@@ -273,7 +273,7 @@ const AboutUs = () => {
           </div>
 
           {/* ===== Art Stream ===== */}
-          <div className="border overflow-x-auto no-scrollbar my-12">
+          <div className="border max-w-full overflow-x-auto no-scrollbar my-12">
             <h5 className="font-semibold text-2xl border-b border-primary-regular px-4 py-2">
               <FontAwesomeIcon
                 className="text-2xl mx-2 text-primary-regular"
@@ -335,7 +335,7 @@ const AboutUs = () => {
           </div>
 
           {/* ===== Vocational Courses ===== */}
-          <div className="border overflow-x-auto no-scrollbar my-12">
+          <div className="border max-w-full overflow-x-auto no-scrollbar my-12">
             <h5 className="font-semibold text-2xl border-b border-primary-regular px-4 py-2">
               <FontAwesomeIcon
                 className="text-2xl mx-2 text-primary-regular"
