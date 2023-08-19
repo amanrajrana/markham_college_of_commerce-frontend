@@ -41,10 +41,12 @@ const PgProgram = () => {
     {
       title: "Mathematics (PG)",
       path: "/pg-program/mathematics",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Physics (PG)",
       path: "/pg-program/physics",
+      duration: "2 Year (4 Semester)",
     },
   ];
 
@@ -52,50 +54,62 @@ const PgProgram = () => {
     {
       title: "English (PG)",
       path: "/pg-program/english",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Hindi (PG)",
       path: "/pg-program/hindi",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Sanskrit (PG)",
       path: "/pg-program/sanskrit",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Urdu (PG)",
       path: "/pg-program/urdu",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "History (PG)",
       path: "/pg-program/history",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Political Science (PG)",
       path: "/pg-program/political-science",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Economics (PG)",
       path: "/pg-program/economics",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Philosophy (PG)",
       path: "/pg-program/philosophy",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Geography (PG)",
       path: "/pg-program/geography",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Psychology (PG)",
       path: "/pg-program/psychology",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Sociology (PG)",
       path: "/pg-program/sociology",
+      duration: "2 Year (4 Semester)",
     },
     {
       title: "Home Science (PG)",
       path: "/pg-program/home-science",
+      duration: "2 Year (4 Semester)",
     },
   ];
   return (

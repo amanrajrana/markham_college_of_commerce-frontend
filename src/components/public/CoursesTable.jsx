@@ -27,10 +27,10 @@ const CoursesTable = ({ courses }) => {
                 Full Time & Regular
               </td>
               <td className="border border-gray-300 px-4 py-2">
-                2 Years (4 Semesters)
+                {course.duration}
               </td>
               <td className="border border-gray-300 px-4 py-2 flex justify-center">
-                <Button href={course.path} text={"More..."} />
+                <Button href={course.path} text={"Click Here"} />
               </td>
             </tr>
           ))}
