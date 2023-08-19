@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const CollegeAddress = () => {
   return (
-    <div className="flex gap-4 my-8 max-w-2xl">
+    <div className="flex gap-4 my-8 max-w-2xl flex-col sm:flex-row">
       <div>
         <Image
-          className="border-2 border-primary-regular rounded-sm shadow-md"
+          className="border-2 border-primary-regular rounded-sm shadow-md mx-auto"
           src={"/mcc-icon.png"}
           width={150}
           height={150}
