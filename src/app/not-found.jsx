@@ -1,4 +1,7 @@
+import Link from "next/link";
 import "./globals.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 const NotFound = () => {
   return (
@@ -9,6 +12,9 @@ const NotFound = () => {
         <br />
         come back soon :{")"}
       </div>
+      <Link className="text-xl text-center" href="/">
+        <FontAwesomeIcon className="text-2xl mx-4" icon={faHome} /> Return home
+      </Link>
     </div>
   );
 };

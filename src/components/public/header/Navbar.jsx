@@ -57,7 +57,7 @@ const Navbar = () => {
     {
       isDropDown: false,
       name: "Admission",
-      path: "#",
+      path: "/student/signup",
     },
     {
       isDropDown: true,
@@ -74,25 +74,25 @@ const Navbar = () => {
       isDropDown: true,
       name: "Campus",
       dropDownItems: [
-        { name: "NCC", path: "#" },
-        { name: "Exam", path: "#" },
-        { name: "Class", path: "#" },
-        { name: "Event", path: "#" },
+        { name: "NCC", path: "/campus/ncc" },
+        { name: "United Bank ", path: "/campus/united-bank" },
+        { name: "Csp", path: "/campus/csp" },
+        { name: "Canting", path: "/campus/canting" },
       ],
     },
     {
       isDropDown: false,
       name: "Gallery",
-      path: "#",
+      path: "/gallery",
     },
     {
       isDropDown: true,
       name: "Feedback",
       dropDownItems: [
-        { name: "Student", path: "#" },
-        { name: "College", path: "#" },
-        { name: "Class", path: "#" },
-        { name: "Event", path: "#" },
+        { name: "Student", path: "/feedback/student" },
+        { name: "College", path: "/feedback/college" },
+        { name: "Class", path: "/feedback/class" },
+        { name: "Event", path: "/feedback/Event" },
       ],
     },
   ];
