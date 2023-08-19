@@ -55,7 +55,6 @@ const LoginForm = () => {
 
     try {
       setLoading(true); // LOADING STARTED
-      console.log("api url", apiURL);
       fetch(`${apiURL}/student/signin`, options)
         .then((res) => res.json())
         .then((data) => {

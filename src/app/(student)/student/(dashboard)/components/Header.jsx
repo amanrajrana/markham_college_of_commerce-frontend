@@ -9,7 +9,7 @@ import Image from "next/image";
 import AVATAR from "../user.png";
 import PropTypes from "prop-types";
 
-const Header = ({ setIsMenuOpen, isMenuOpen }) => {
+const Header = ({ setIsMenuOpen, studentName }) => {
   return (
     <header className="flex justify-between items-center bg-primary-regular text-white shadow-md">
       <div
@@ -45,7 +45,7 @@ const Header = ({ setIsMenuOpen, isMenuOpen }) => {
             alt="User Avatar"
             className="rounded-full border-2 border-white"
           />
-          <span className="hidden sm:inline-block">Aman Raj</span>
+          <span className="hidden sm:inline-block">{studentName}</span>
         </div>
       </div>
     </header>
