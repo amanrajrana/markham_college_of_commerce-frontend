@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const DropDownItem = ({ dropDownItemsList }) => {
   return (
-    <ul className="bg-blue-950 md:bg-transparent p-3 md:px-0 md:absolute duration-500">
+    <ul className="bg-blue-950 md:bg-transparent p-3 md:px-0 md:absolute duration-500 z-50">
       {dropDownItemsList.map((item, index) => (
         <Link
           key={index}

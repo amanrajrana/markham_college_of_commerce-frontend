@@ -31,17 +31,22 @@ const Navbar = () => {
       path: "/",
     },
     {
-      isDropDown: false,
-      name: "About Us",
-      path: "/about-us",
+      isDropDown: true,
+      name: "About College",
+      dropDownItems: [
+        { name: "About Us", path: "/about-us" },
+        { name: "Vision & Mission", path: "/vision-mission" },
+        { name: "Principal's Message", path: "/principal-message" },
+        { name: "Why Choose Us", path: "/why-choose-us" },
+      ],
     },
     {
       isDropDown: true,
       name: "Programs",
       dropDownItems: [
-        { id: 2.1, name: "UG Programs", path: "#" },
-        { id: 2.2, name: "PG Programs", path: "#" },
-        { id: 2.3, name: "Vocational Programs", path: "#" },
+        { name: "UG Programs", path: "/ug-program" },
+        { name: "PG Programs", path: "/pg-program" },
+        { name: "Vocational Programs", path: "/vocational-program" },
       ],
     },
     {
@@ -66,7 +71,6 @@ const Navbar = () => {
       ],
     },
     {
-      id: 6,
       isDropDown: true,
       name: "Campus",
       dropDownItems: [
@@ -77,13 +81,11 @@ const Navbar = () => {
       ],
     },
     {
-      id: 7,
       isDropDown: false,
       name: "Gallery",
       path: "#",
     },
     {
-      id: 9,
       isDropDown: true,
       name: "Feedback",
       dropDownItems: [
