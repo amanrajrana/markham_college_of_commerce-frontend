@@ -2,7 +2,16 @@
 # Markham College of Commerce
 
 Welcome to the website of Markham College of Commerce!
+___
 
+### Design overview
+
+###### Mobile view
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyvWvrCm04cBIV_XKObHIoBomzs-Mdjz5UpAseaSP-XOLOEu99ZYheacV3wfHpQSnKJhGF7VZjhvDt7pP1u12YWi5ckMcY3yii9WfsmbC1QLEeeY_Ou1fZ_53DvliScq-fy2ZoHo5Es3rDz6gsNr4wu47StuQsJBnDp51twv0VuzCCO6Rwns2N79ka84s/s320/Screenshot_20230820-094345.png" height="300" alt="mobile-view">
+
+
+###### Widescreen's long screenshot
+<img src="https://blogger.googleusercontent.com/img/a/AVvXsEgzeoo_Vw9a8-3wtlpoH_fvNsCUYchyYOoQhTiPgXY3wEVcQOsmhOUb3XDZwlM_ALEoAfMWQq5DS4VMowlQjSza4fSHjgKzQhApcFJ-sbg4B_kYgqnwPnzSbDJwlhh5dbUO7OGFpy3RgD6frcf0dmmRbpT707DBw6A9nYr4vhvqHcaSjCb21AOumy2sWfs" alt="wide screen">
 
 ---
 ## Table of Contents
@@ -58,6 +67,11 @@ Install dependencies
 
 ```bash
   npm install
+```
+
+Setup .env.local variable
+```bash
+NEXT_PUBLIC_API_HOST=http://localhost:5000 #backend api url
 ```
 
 Start Server
