@@ -12,7 +12,7 @@ const PrincipleMsg = () => {
           <div className="h-full w-full overflow-hidden">
             <Image
               className="w-full hover:scale-110 duration-500 cursor-pointer"
-              src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5onQe14po8T1ViIfe7Q-hrjeS7jGBMEBSUBnnFgw1vYovHpNpDI0_4Ix7epbFOsUu7cJqx-sh-YvQcudUNkHBuZH8mWhvSHCcF0Cmw-G8-uq1VkNPB1pn3pnMWy9EaHHhM2xyQp499kDZHIVRDm7MaMwIySr6tOPal2zT0OXlGzUJ_2J5bSa6rCaweDY/s320/dummy_principal.png"}
+              src={"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguSR__-B17Fl38oQkCFJfsxTM2noA_rCi0KVRpdLcvuaRWxs9KPxuMa9DXSYhgH4njCty0woGugGppj8eRUGcwDdjtGXVALZalGgpbkaVfe4b9fZgB7srLEf3ZpbiBc-4o2mSikZKYXg4Pf4h-7S3F0ENvF3jZw6qg2Z5naiay3RlI0wABIKrTAScAY5o/s533/dummy_principal.png"}
               height={300}
               width={300}
               alt="Markham college of commerce principle"
