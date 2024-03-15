@@ -4,6 +4,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Warring from "./warring";
 
 // Add the Font Awesome icons to the library
 library.add(fas);
@@ -26,7 +27,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-x-hidden`}>{children}</body>
+      <body className={`${inter.className} overflow-x-hidden`}>
+        <Warring />
+        {children}
+      </body>
     </html>
   );
 }
