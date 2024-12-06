@@ -11,6 +11,7 @@ library.add(fas);
 library.add(fab);
 
 const inter = Inter({ subsets: ["latin"] });
+// <meta name="google-site-verification" content="7wwU--js6Ug7emyhHosZRBK97m3y0rNpa9G-T6lXLTw" />
 
 export const metadata = {
   title: "Markham College of Commerce, Hazaribagh",
@@ -21,6 +22,9 @@ export const metadata = {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
   },
 };
 
